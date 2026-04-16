@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c02m8l2mff6g7"]
 
-[ext_resource type="Texture2D" uid="uid://davvu0iw63xl1" path="res://icon.svg" id="1_6lcqf"]
 [ext_resource type="Script" uid="uid://dd3qsut6lyf3x" path="res://scripts/snail.gd" id="1_oqbjf"]
+[ext_resource type="Texture2D" uid="uid://clr7irl61yvy0" path="res://graphics/snail.png" id="2_oqbjf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6lcqf"]
 radius = 36.0
@@ -18,9 +18,10 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_6lcqf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1876866610]
+texture_filter = 1
 position = Vector2(-1.5000024, 1.9073486e-06)
-scale = Vector2(0.4140625, 0.42187503)
-texture = ExtResource("1_6lcqf")
+scale = Vector2(5, 5.095)
+texture = ExtResource("2_oqbjf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
