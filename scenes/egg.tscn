@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://lhukkupi5s5j"]
+
+[ext_resource type="Texture2D" uid="uid://krgps68cxbxr" path="res://graphics/egg.png" id="1_maxla"]
+[ext_resource type="Script" uid="uid://cr120oa8d4bve" path="res://scripts/egg.gd" id="1_qlus4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maxla"]
+radius = 12.0
+height = 32.0
+
+[node name="Egg" type="RigidBody2D" unique_id=1854785099]
+input_pickable = true
+gravity_scale = 0.0
+script = ExtResource("1_qlus4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1619349616]
+texture_filter = 1
+texture = ExtResource("1_maxla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1184472924]
+scale = Vector2(3.5, 3.5)
+shape = SubResource("CapsuleShape2D_maxla")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
