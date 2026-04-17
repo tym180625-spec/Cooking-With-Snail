@@ -1,34 +1,33 @@
-[gd_scene format=3 uid="uid://lhukkupi5s5j"]
+[gd_scene format=3 uid="uid://bkxfu5ck86pma"]
 
-[ext_resource type="Texture2D" uid="uid://krgps68cxbxr" path="res://graphics/egg.png" id="1_maxla"]
-[ext_resource type="Script" uid="uid://cr120oa8d4bve" path="res://scripts/egg.gd" id="1_qlus4"]
+[ext_resource type="Script" uid="uid://cr120oa8d4bve" path="res://scripts/egg.gd" id="1_nl05r"]
+[ext_resource type="Texture2D" uid="uid://cs564dr4lr27v" path="res://graphics/salt.png" id="2_nl05r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maxla"]
 radius = 12.0
 height = 32.0
 
-[node name="Egg" type="RigidBody2D" unique_id=1854785099]
+[node name="Salt" type="RigidBody2D" unique_id=1854785099]
 input_pickable = true
 gravity_scale = 0.0
-script = ExtResource("1_qlus4")
+script = ExtResource("1_nl05r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1619349616]
 texture_filter = 1
 scale = Vector2(4, 4)
-texture = ExtResource("1_maxla")
+texture = ExtResource("2_nl05r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1184472924]
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_maxla")
 
-[node name="Name" type="Label" parent="." unique_id=38476417]
-offset_left = -20.0
-offset_top = 27.0
-offset_right = 20.0
-offset_bottom = 50.0
-text = "Egg"
+[node name="Name" type="Label" parent="." unique_id=951025057]
+offset_left = -19.0
+offset_top = 34.0
+offset_right = 21.0
+offset_bottom = 57.0
+text = "Salt"
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -21,3 +21,24 @@ theme_override_font_sizes/font_size = 64
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Steps" type="Label" parent="." unique_id=821666718]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = 127.0
+grow_vertical = 2
+text = "To do: 
+
+1. Combine sugar and butter
+
+2. Add the eggs and vanilla
+
+3. Combine baking powder and flour
+
+4. Combine mixtures
+
+5. Put milk in batter
+
+6. Let it heat for a minute"
+autowrap_mode = 2

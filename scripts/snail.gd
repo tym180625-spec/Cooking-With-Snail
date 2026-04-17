@@ -31,6 +31,11 @@ func _process(delta: float) -> void:
 	
 	to_mouse = mouse_position - global_position
 	
+	if direction.x < 0: 
+		$Sprite2D.set_flip_h(true)
+	else: 
+		$Sprite2D.set_flip_h(false)
+	
 	if to_mouse.length() > 5:
 		velocity = direction
 		velocity = velocity.normalized() * speed
