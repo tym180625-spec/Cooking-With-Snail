@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://lhukkupi5s5j"]
 
 [ext_resource type="Texture2D" uid="uid://krgps68cxbxr" path="res://graphics/egg.png" id="1_maxla"]
-[ext_resource type="Script" uid="uid://cr120oa8d4bve" path="res://scripts/egg.gd" id="1_qlus4"]
+[ext_resource type="Script" uid="uid://cr120oa8d4bve" path="res://scripts/ingredients_scripts/egg.gd" id="1_qlus4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maxla"]
+radius = 12.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlus4"]
 radius = 12.0
 height = 32.0
 
@@ -20,6 +24,12 @@ texture = ExtResource("1_maxla")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1184472924]
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_maxla")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1442468551]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=473356957]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_qlus4")
 
 [node name="Name" type="Label" parent="." unique_id=38476417]
 offset_left = -20.0

@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://bkxfu5ck86pma"]
 
-[ext_resource type="Script" uid="uid://cr120oa8d4bve" path="res://scripts/egg.gd" id="1_nl05r"]
+[ext_resource type="Script" uid="uid://bbbgkrartxycx" path="res://scripts/ingredients_scripts/salt.gd" id="1_nl05r"]
 [ext_resource type="Texture2D" uid="uid://cs564dr4lr27v" path="res://graphics/salt.png" id="2_nl05r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maxla"]
+radius = 12.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nl05r"]
 radius = 12.0
 height = 32.0
 
@@ -20,6 +24,12 @@ texture = ExtResource("2_nl05r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1184472924]
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_maxla")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1343703667]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1307695056]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_nl05r")
 
 [node name="Name" type="Label" parent="." unique_id=951025057]
 offset_left = -19.0

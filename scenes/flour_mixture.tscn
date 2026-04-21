@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cvt3pto4jpeyn"]
+
+[ext_resource type="Script" uid="uid://jw81fwtwk7l8" path="res://scripts/ingredients_scripts/flour_mixture.gd" id="1_3x7wh"]
+[ext_resource type="Texture2D" uid="uid://crrhm0dxc66u5" path="res://graphics/flour_mixture.png" id="2_jys5j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maxla"]
+radius = 12.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3x7wh"]
+radius = 12.0
+height = 32.0
+
+[node name="flour_mixture" type="RigidBody2D" unique_id=1854785099]
+input_pickable = true
+gravity_scale = 0.0
+script = ExtResource("1_3x7wh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1619349616]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_jys5j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1184472924]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_maxla")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=290134672]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1066936340]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_3x7wh")
+
+[node name="Name" type="Label" parent="." unique_id=2060797698]
+offset_left = -41.0
+offset_top = 33.0
+offset_right = 64.0
+offset_bottom = 56.0
+text = "Flour Mixture"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

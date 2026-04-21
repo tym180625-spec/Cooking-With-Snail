@@ -58,6 +58,8 @@ func spawn_ingredient() -> void:
 	add_child(sugar_instance)
 	add_child(vanilla_instance)
 	
+	#connect singals for combination
+	baking_powder_instance.combine_with.connect(flour_instance.on_combined)
 	#egg_instance.get_node("Sprite2D").scale = Vector2(4, 4)
 	
 	# put the ingredient at a random point
@@ -104,7 +106,7 @@ func spawn_snail() -> void:
 func _on_snail_food_hit() -> void:
 	$HUD/GameOver.text = "Your food got infected Game Over"
 	$HUD/GameOver.show()
-	$HUD/Steps.hide()
+	$HUD/PanelContainer.hide()
 	$Snail.queue_free()
 	print("mouse hit")
 
@@ -112,6 +114,6 @@ func _on_snail_food_hit() -> void:
 func _on_snail_player_hit() -> void:
 	$HUD/GameOver.text = "Your hands got infected Game Over"
 	$HUD/GameOver.show()
-	$HUD/Steps.hide()
+	$HUD/PanelContainer.hide()
 	$Snail.queue_free()
 	print("mouse hit")

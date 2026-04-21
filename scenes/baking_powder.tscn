@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cyham44y0tivl"]
 
-[ext_resource type="Script" uid="uid://cr120oa8d4bve" path="res://scripts/egg.gd" id="1_e8bg7"]
+[ext_resource type="Script" uid="uid://cbxq4vr2a1w50" path="res://scripts/ingredients_scripts/baking_powder.gd" id="1_e8bg7"]
 [ext_resource type="Texture2D" uid="uid://s64dcerm7m37" path="res://graphics/baking_powder.png" id="2_e8bg7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maxla"]
@@ -17,7 +17,13 @@ texture_filter = 1
 scale = Vector2(4, 4)
 texture = ExtResource("2_e8bg7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1184472924]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=101648827]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_maxla")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=787206533]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1184472924]
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_maxla")
 
@@ -33,3 +39,4 @@ vertical_alignment = 1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
