@@ -26,21 +26,25 @@ text = "1. Combine sugar and butter"
 
 [node name="Step2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=641534899]
 layout_mode = 2
-text = "2. Add the eggs and vanilla"
+text = "2. Add the eggs"
 
-[node name="Step3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1182886346]
+[node name="Step3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1034653525]
+layout_mode = 2
+text = "3. Add the vanilla"
+
+[node name="Step4" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1182886346]
 layout_mode = 2
 text = "3. Combine baking powder and flour"
 
-[node name="Step4" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=725178819]
+[node name="Step5" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=725178819]
 layout_mode = 2
 text = "4. Combine mixtures"
 
-[node name="Step5" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1721651053]
+[node name="Step6" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1721651053]
 layout_mode = 2
 text = "5. Put milk in batter"
 
-[node name="Step6" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1577132551]
+[node name="Step7" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1577132551]
 layout_mode = 2
 text = "6. Let it heat for a minute"
 

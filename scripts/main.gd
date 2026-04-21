@@ -13,6 +13,7 @@ extends Node
 @onready var salt_resource : Resource = preload("res://scenes/salt.tscn")
 @onready var sugar_resource : Resource = preload("res://scenes/sugar.tscn")
 @onready var vanilla_resource : Resource = preload("res://scenes/vanilla.tscn")
+@onready var sugary_butter_resource : Resource = preload("res://scenes/sugary_butter.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,6 +48,7 @@ func spawn_ingredient() -> void:
 	var salt_instance : RigidBody2D = salt_resource.instantiate()
 	var sugar_instance : RigidBody2D = sugar_resource.instantiate()
 	var vanilla_instance : RigidBody2D = vanilla_resource.instantiate()
+	var sugary_butter_instance : RigidBody2D = sugary_butter_resource.instantiate()
 	
 	# add it to our scene
 	add_child(egg_instance)
@@ -57,9 +59,13 @@ func spawn_ingredient() -> void:
 	add_child(salt_instance)
 	add_child(sugar_instance)
 	add_child(vanilla_instance)
+	add_child(sugary_butter_instance)
+	
+	sugary_butter_instance.hide()
 	
 	#connect singals for combination
 	baking_powder_instance.combine_with.connect(flour_instance.on_combined)
+	butter_instance.combine_with.connect(sugar_instance.on_combined)
 	#egg_instance.get_node("Sprite2D").scale = Vector2(4, 4)
 	
 	# put the ingredient at a random point

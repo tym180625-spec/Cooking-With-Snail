@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bo4b11qitnd3g"]
+
+[ext_resource type="Script" uid="uid://ck1bxxnk7iocn" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://c02m8l2mff6g7" path="res://scenes/snail.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://bshk4bwvspc6k" path="res://scenes/hud.tscn" id="3_sugp2"]
+
+[sub_resource type="Curve2D" id="Curve2D_sugp2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1152, 0, 0, 0, 0, 0, 1152, 648, 0, 0, 0, 0, 128, 648, 0, 0, 0, 0, 128, 0, 0, 0, 0, 0, 1152, 0)
+}
+point_count = 5
+
+[node name="Main" type="Node" unique_id=1892932239]
+script = ExtResource("1_0wfyh")
+
+[node name="HUD" parent="." unique_id=692148094 instance=ExtResource("3_sugp2")]
+process_mode = 4
+physics_interpolation_mode = 2
+auto_translate_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=956370673]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.7010163, 0.6959371, 0.49095052, 1)
+
+[node name="Snail" parent="." unique_id=813054526 instance=ExtResource("1_o5qli")]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=495862192]
+curve = SubResource("Curve2D_sugp2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1835152427]
+position = Vector2(1152, 0)
+rotation = 1.5707964
+
+[connection signal="food_hit" from="Snail" to="." method="_on_snail_food_hit"]
+[connection signal="player_hit" from="Snail" to="." method="_on_snail_player_hit"]
